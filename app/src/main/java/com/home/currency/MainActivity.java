@@ -29,18 +29,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 temp=ed_ntd.getText().toString();
                 if(temp.compareTo("")==0) {
-                    title="Problem";
-                    result = "Please Enter Your NTD Amount!";
+                    title=getString(R.string.problem);
+                    result = getString(R.string.problem_hint);
                 }
                 else {
-                    title="Result";
-                    result = "USD is " + df.format(Double.parseDouble(temp)/30.9);
+                    title=getString(R.string.result);
+                    result = getString(R.string.usd_is) + df.format(Double.parseDouble(temp)/30.9);
                 }
 
                 new AlertDialog.Builder(MainActivity.this)
                         .setTitle(title)
                         .setMessage(result)
-                        .setPositiveButton("OK",null)
+                        .setPositiveButton(R.string.ok,null)
                         .show();
             }
         });
